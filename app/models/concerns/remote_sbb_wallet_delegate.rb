@@ -52,14 +52,6 @@ module RemoteSbbWalletDelegate
     # erase local items which should not be stored
     # real 3rd party services may require a great deal more marshalling
     # enough to extract out to another concern
-
-    # local_params[:cards_attributes].each do |card_attributes|
-    #   card_attributes.delete(:last_4)
-    #   card_attributes.delete(:first_6)
-    #   # this should probably be in the local model
-    #   card_attributes.delete(:card_number) unless card_attributes[:card_number]
-    # end
-
     convert_local_wallet(local_params)
     # make the remote api call
     remote_wallet = RemoteWallet.create_or_update(local_params[:wallet_token], local_params)
