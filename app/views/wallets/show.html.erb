@@ -1,0 +1,52 @@
+<% content_for :titles do %>
+  Your ActiveModel Wallet
+<% end %>
+
+<% if @wallet.warning? %>
+  <div class="row">
+    <div>
+      <div class="alert alert-warning alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <%= @wallet.messages.values.join(' ') %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<p>Name <%= "#{@wallet.first_name} #{@wallet.last_name}" %></p>
+<p>Email <%= @wallet.email %></p>
+<p>Account Number <%= @wallet.account_number_unmask_last(4) %></p>
+<br>
+
+<!--table of cards -->
+
+<div class="col-md-8">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th><%= Card.human_attribute_name('card_number') %></th>
+      <th><%= Card.human_attribute_name('card_type') %></th>
+      <th colspan="3"><%= Card.human_attribute_name('expiration_date') %></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @wallet.cards.each_with_index do |card, index| %>
+      <tr>
+
+        <td><%= "#{card.first_6}-xxxx-#{card.last_4}" %> </td>
+        <td><%= card.card_type %></td>
+        <td><%= card.expiration_date %>
+          <% if card.expired? %>
+            <span class="label label-warning">expired</span>
+          <% end %></td>
+        <td><%= link_to 'Edit', edit_wallet_card_path(card) %></td>
+        <td><%= link_to 'Destroy', wallet_card_path(card), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+<div class="col-md-8">
+  <%= link_to('edit wallet', edit_wallet_path, class: 'btn btn-primary', type: 'button') %>
+  <%= link_to('add card', new_wallet_card_path, class: 'btn btn-primary', type: 'button') %>
+</div>

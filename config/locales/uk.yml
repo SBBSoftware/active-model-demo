@@ -1,0 +1,7 @@
+uk:
+  hello: 'Good Evening'
+
+  activemodel:
+      attributes:
+        card:
+          card_number: 'Primary account number'

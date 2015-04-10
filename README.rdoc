@@ -1,0 +1,5 @@
+== README
+
+This application is a demonstration of converting Ruby objects to use ActiveModel functionality.
+
+Visit www.sbbsoftware.com for the accompanying article

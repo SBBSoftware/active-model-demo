@@ -1,0 +1,9 @@
+<% content_for :titles do %>
+  Edit Card
+<% end %>
+<%= form_tag plain_wallet_plain_card_path(params[:id]), method: 'patch' do %>
+  <%= render partial: 'form', locals: { button_text: 'Update Card' } %>
+<% end %>
+<div class="row"></div>
+<br>
+<div class="col-md-6"><%= link_to 'Cancel', plain_wallet_path %></div>

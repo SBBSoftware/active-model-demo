@@ -1,0 +1,38 @@
+<%= form_for @wallet, url: wallet_path do |f| %>
+  <% if @wallet.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@wallet.errors.count, "error") %> prohibited this wallet from being saved:</h2>
+
+      <ul>
+        <% @wallet.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <p>Name <%= "#{@wallet.first_name} #{@wallet.last_name}" %></p>
+
+    <p>Account Number <%= @wallet.account_number_unmask_last(4) %></p>
+
+    <div class="form-group">
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+    </div>
+
+  </div>
+  <div>
+    <%= f.submit 'Update', class: 'btn btn-primary' %>
+  </div>
+<% end %>

@@ -1,0 +1,9 @@
+<% content_for :titles do %>
+  Add New Card
+<% end %>
+<%= form_tag plain_wallet_plain_cards_path, method: 'post' do %>
+  <%= render partial: 'form', locals: { button_text: 'Add Card' } %>
+<% end %>
+<div class="row"></div>
+<br>
+<div class="col-md-6"><%= link_to 'Cancel', plain_wallet_path %></div>

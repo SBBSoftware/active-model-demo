@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ActiveModelDemos</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= stylesheet_link_tag 'static', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <meta name="robots" content="noindex, nofollow"/>
+  <meta name="description" content="Test bed for demos"/>
+  <meta name="keywords" content="rails ruby activemodel"/>
+</head>
+<body>
+<div class="site-wrapper">
+
+  <div class="site-wrapper-inner">
+
+    <div class="cover-container">
+
+      <%= render 'shared/cover_top_nav' %>
+
+      <%= yield %>
+    </div>
+  </div>
+</div>
+</body>
+</html>

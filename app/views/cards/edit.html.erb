@@ -1,0 +1,9 @@
+<% content_for :titles do %>
+  Edit ActiveModel Card
+<% end %>
+
+<%= render partial: 'form', locals: { button_text: 'Update Card' } %>
+
+<div class="row"></div>
+<br>
+<div class="col-md-6"><%= link_to 'Cancel', wallet_path %></div>

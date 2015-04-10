@@ -1,0 +1,38 @@
+<%= form_for [:wallet, @card] do |f| %>
+  <% if @card.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@card.errors.count, "error") %> prohibited this card from being saved:</h2>
+
+      <ul>
+        <% @card.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="col-md-6">
+    <div class="form-group">
+      <%= f.label :card_number %>
+      <%= f.text_field :card_number, class: 'form-control input-medium', maxlength: 16, placeholder: 'Card number' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :short_expiration, 'Expiration date' %>
+      <%= f.text_field :short_expiration, class: 'form-control input-medium', maxlength: 5, placeholder: 'Expiration Date eg 01/17' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :card_type %>
+      <%= select_tag 'card[card_type]',
+                     options_for_select([['VISA', 'VISA'], ['MasterCard', 'MASTERCARD'], ['Amex', 'AMEX']], @card.card_type),
+                     class: 'form-control',
+                     multiple: false
+      %>
+    </div>
+    <div>
+      <%= submit_tag button_text, class: 'btn btn-primary' %>
+    </div>
+  </div>
+
+<% end %>
