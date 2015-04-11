@@ -20,7 +20,7 @@ class CardsController < ApplicationController
     respond_to do |format|
       if @wallet.save
         format.html { redirect_to wallet_path, notice: 'Card was successfully created.' }
-        format.json { render wallet_path, status: :created, location: wallet_path }
+        format.json { render json: @wallet, status: :ok, location: wallet_path }
       else
         format.html { render :new }
         format.json { render json: @card.errors, status: :unprocessable_entity }
@@ -34,7 +34,7 @@ class CardsController < ApplicationController
     respond_to do |format|
       if @wallet.update_card(params[:id], card_params)
         format.html { redirect_to wallet_path, notice: 'Card was successfully updated.' }
-        format.json { render :show, status: :ok, location: wallet_path }
+        format.json { render json: @wallet, status: :ok, location: wallet_path }
       else
         @card = @wallet.find_card(params[:id])
         format.html { render :edit }
