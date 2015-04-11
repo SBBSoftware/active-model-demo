@@ -7,11 +7,11 @@ Rails.application.routes.draw do
   get '/pages/*id' => 'pages#show', as: :page, format: false
 
   resource :plain_wallet, :only => [:show, :edit, :update] do
-    resources :plain_cards, :except => [:index, :show] #, only: [:edit, :new, :create, :update, :destroy]
+    resources :plain_cards, :except => [:index, :show]
   end
 
   resource :wallet, :only => [:show, :edit, :update] do
-    resources :cards #, :except => [:index, :show]
+    resources :cards, :except => [:index, :show]
   end
 
 

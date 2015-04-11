@@ -69,6 +69,7 @@ class PlainWallet
     cards.each do |card|
       @cards << PlainCard.new(card)
     end
+    check_warnings
   end
 
   # do we have a warning message
@@ -169,5 +170,4 @@ class PlainWallet
     # we need to check sub objects on initialization
     check_warnings
   end
-
 end
