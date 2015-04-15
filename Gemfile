@@ -27,8 +27,20 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'bcrypt', '~> 3.1.7'
 gem 'bcrypt'
 
+#for bootstrap
+gem 'bootstrap-sass', '~> 3.3.4'
+gem 'autoprefixer-rails'
+
+#static page
+gem 'high_voltage'
+
 group :production do
   gem 'rails_12factor'
+end
+
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :development, :test do
@@ -44,22 +56,9 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'minitest-reporters'
   gem 'annotate', '~> 2.6.5'
-  gem 'better_errors'
-  gem 'binding_of_caller'
-
-  #for bootstrap
-  gem 'bootstrap-sass', '~> 3.3.4'
-  gem 'autoprefixer-rails'
-
-  #static page
-  gem 'high_voltage'
-
   gem 'simplecov'
-
   gem 'capybara'
   gem 'rack_session_access'
-
-  gem 'rubocop'
 
 end
 
