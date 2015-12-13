@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.1'
+gem 'rails', '~>4.2.5'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
@@ -55,10 +55,12 @@ group :development, :test do
   gem 'shoulda'
   gem 'factory_girl_rails'
   gem 'minitest-reporters'
-  gem 'annotate', '~> 2.6.5'
+  gem 'annotate'
   gem 'simplecov'
   gem 'capybara'
   gem 'rack_session_access'
 
 end
+
+gem 'mina'
 
