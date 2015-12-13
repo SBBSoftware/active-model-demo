@@ -82,4 +82,4 @@ production:
   <<: *default
   database: sbb-active-model-demos_production
   username: sbb-active-model-demos
-  password: <%= ENV['SBB-ACTIVE-MODEL-DEMOS_DATABASE_PASSWORD'] %>
+  password: <%= ENV['SBB_ACTIVE_MODEL_DEMOS_DATABASE_PASSWORD'] %>
