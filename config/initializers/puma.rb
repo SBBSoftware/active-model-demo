@@ -1,3 +1,4 @@
+require 'puma'
 # Change to match your CPU core count
 workers 1
 
