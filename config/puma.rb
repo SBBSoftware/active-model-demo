@@ -21,7 +21,9 @@ puts "App dir #{app_dir}"
 puts "Shared dir #{shared_dir}"
 puts "Binding to socket #{socket_location}"
 puts '-------------------------'
+puts 'listening'
 # Logging
+
 stdout_redirect "#{shared_dir}/log/puma.stdout.log", "#{shared_dir}/log/puma.stderr.log", true
 
 # Set master PID and state locations
