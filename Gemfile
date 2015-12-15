@@ -28,7 +28,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt'
 
 #for bootstrap
-gem 'bootstrap-sass', '~> 3.3.4'
+gem 'bootstrap-sass' #, '~> 3.3.4'
 gem 'autoprefixer-rails'
 
 #static page
@@ -63,4 +63,5 @@ group :development, :test do
 end
 
 gem 'mina'
+gem 'puma'
 
