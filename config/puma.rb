@@ -13,12 +13,13 @@ rails_env = ENV['RAILS_ENV'] || "production"
 environment rails_env
 
 # Set up socket location
-bind "unix://#{shared_dir}/sockets/sockets.sbb.sock"
+socket_location = "unix://#{shared_dir}/sockets/sockets.sbb.sock"
+bind socket_location
 puts '-------------------------'
 puts 'Enviornment settings'
 puts "App dir #{app_dir}"
 puts "Shared dir #{shared_dir}"
-puts "Binding to socket #{bind}"
+puts "Binding to socket #{socket_location}"
 puts '-------------------------'
 # Logging
 stdout_redirect "#{shared_dir}/log/puma.stdout.log", "#{shared_dir}/log/puma.stderr.log", true
