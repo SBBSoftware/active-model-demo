@@ -5,6 +5,7 @@ workers 2
 # Min and Max threads per worker
 threads 1, 6
 # for mina
+puts "The file is #{__FILE__}"
 app_dir = File.expand_path("../../../", __FILE__)
 t = File.expand_path("../../../../", __FILE__)
 puma_dir = "#{t}/puma"
