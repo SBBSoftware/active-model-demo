@@ -20,7 +20,7 @@ bind socket_location
 puts '-------------------------'
 puts 'settings'
 puts "App directory #{app_dir}"
-puts "Shared dir #{t}"
+puts "Shared dirextory #{t}"
 puts "The file is #{__FILE__}"
 puts "Puma dir #{puma_dir}"
 puts "Binding to socket #{socket_location}"
