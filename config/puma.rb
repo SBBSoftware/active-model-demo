@@ -17,9 +17,11 @@ environment rails_env
 socket_location = "unix://#{puma_dir}/sockets/sockets.sbb.sock"
 bind socket_location
 puts '-------------------------'
-puts 'Enviornment settings'
+puts 'settings'
 puts "App dir #{app_dir}"
-puts "Shared dir #{puma_dir}"
+puts "Shared dir #{t}"
+
+puts "Puma dir #{puma_dir}"
 puts "Binding to socket #{socket_location}"
 puts '-------------------------'
 puts 'listening'
