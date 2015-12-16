@@ -6,7 +6,7 @@ workers 2
 threads 1, 6
 # for mina
 
-app_dir = File.expand_path("../../../", __FILE__)
+app_dir = File.expand_path("../../../../current", __FILE__)
 t = File.expand_path("../../../../", __FILE__)
 puma_dir = "#{t}/puma"
 
@@ -19,7 +19,7 @@ socket_location = "unix://#{puma_dir}/sockets/sockets.sbb.sock"
 bind socket_location
 puts '-------------------------'
 puts 'settings'
-puts "App dir #{app_dir}"
+puts "App directory #{app_dir}"
 puts "Shared dir #{t}"
 puts "The file is #{__FILE__}"
 puts "Puma dir #{puma_dir}"
