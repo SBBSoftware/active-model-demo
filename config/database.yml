@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: sbb-active-model-demos_production
-  username: sbb-active-model-demos
+  username: webuser
   password: <%= ENV['SBB_ACTIVE_MODEL_DEMOS_DATABASE_PASSWORD'] %>
